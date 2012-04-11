@@ -51,3 +51,6 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 "Set Apache buildr buildfile's to highlight as ruby
 autocmd BufNewFile,BufRead buildfile set syntax=ruby
+
+"Change swap directory to /tmp
+set directory=/tmp
