@@ -55,7 +55,7 @@ do
   echo -n "$current_dir..."
   if [ ! -d $current_dir ]; then
     echo "doesn't exist, creating it now"
-    mkdir $current_dir
+    mkdir -p $current_dir
   else
     echo "exists!"
   fi
@@ -90,6 +90,21 @@ if [ -d ~/.vim/bundle/nerdtree ]; then
 else
   echo -n "installing..."
   cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git > /dev/null
+  echo "done!"
+fi
+
+#Install vim-surround, or if it already exists, pull down the latest
+echo -n "vim-surround..."
+if [ -d ~/.vim/bundle/vim-surround ]; then 
+  cd ~/.vim/bundle/vim-surround && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-surround && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround.git > /dev/null
   echo "done!"
 fi
 
