@@ -54,3 +54,9 @@ autocmd BufNewFile,BufRead buildfile set syntax=ruby
 
 "Change swap directory to /tmp
 set directory=/tmp
+
+"Map Control+T <direction arrow> to assorted tab commands
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
