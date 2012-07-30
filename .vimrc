@@ -22,6 +22,9 @@
 "Set the xterm type
 set t_Co=256
 
+"Turn syntax highlighting on
+syntax on
+
 "Use a friendlier colorscheme for dark backgrounds
 colorscheme desert
 
