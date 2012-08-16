@@ -10,6 +10,14 @@
 # This script will download and install my vim plugins along with installing
 # my .vimrc into a users home directory.
 #
+# The tagbar plugin requires Exuberant ctags.  
+#
+# OSX: brew install ctags-exuberant
+# Ubuntu: apt-get install exuberant-ctags 
+#
+# On OSX you may have to modify your path so that /usr/local/bin/ctags is used
+# instead of /usr/bin/ctags
+#
 ################################################################################
 
 START_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -32,7 +40,7 @@ echo
 
 #Make sure all prerequisite software is installed
 echo "Checking that all required software is installed:"
-prereqs=( vim curl git )
+prereqs=( vim curl git ctags )
 for current_prereq in ${prereqs[@]}
 do
   echo -n "$current_prereq..."
@@ -105,6 +113,21 @@ if [ -d ~/.vim/bundle/vim-surround ]; then
 else
   echo -n "installing..."
   cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround.git > /dev/null
+  echo "done!"
+fi
+
+#https://github.com/majutsushi/tagbar.git
+echo -n "tagbar..."
+if [ -d ~/.vim/bundle/tagbar ]; then 
+  cd ~/.vim/bundle/tagbar && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/tagbar && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/majutsushi/tagbar.git > /dev/null
   echo "done!"
 fi
 

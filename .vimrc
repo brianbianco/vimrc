@@ -43,6 +43,9 @@ call pathogen#helptags()
 " map \ to the NERD file browser
 map \ :NERDTreeToggle<CR>
 
+" map = to the Tagbar browser
+map <C-g> :TagbarToggle<CR>
+
 " Tell NerdTree to show hidden files
 let NERDTreeShowHidden=1
 
@@ -71,6 +74,8 @@ map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
+map <C-t>n :tabnew<cr>
+map <C-t>c :tabc<cr>
 
 " Always show a status line at the bottom of the window
 set laststatus=2
