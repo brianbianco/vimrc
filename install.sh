@@ -49,7 +49,11 @@ do
     echo "no, please install $current_prereq"
     exit 1
   else
-    echo "yes"
+    if [ $current_prereq == "ctags" ]; then
+      echo "yes, but please make sure it is exuberant ctags for tagbar to work properly!!"
+    else
+      echo "yes"
+    fi
   fi
 done
 
