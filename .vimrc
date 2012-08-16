@@ -74,6 +74,12 @@ map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
+
+map <C-t>k :tabr<cr>
+map <C-t>j :tabl<cr>
+map <C-t>h :tabp<cr>
+map <C-t>l :tabn<cr>
+
 map <C-t>n :tabnew<cr>
 map <C-t>c :tabc<cr>
 
