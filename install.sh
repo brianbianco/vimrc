@@ -46,7 +46,11 @@ do
   echo -n "$current_prereq..."
   type $current_prereq 2>&1 1>/dev/null
   if [ $? -ne 0 ]; then
-    echo "no, please install $current_prereq"
+    if [ $current_prereq == "ctags" ]; then
+      echo "no, please install exuberant ctags!" 
+    else 
+      echo "no, please install $current_prereq"
+    fi
     exit 1
   else
     if [ $current_prereq == "ctags" ]; then
@@ -120,7 +124,7 @@ else
   echo "done!"
 fi
 
-#https://github.com/majutsushi/tagbar.git
+#Install tagbar, of if it already exists, pull down the latest
 echo -n "tagbar..."
 if [ -d ~/.vim/bundle/tagbar ]; then 
   cd ~/.vim/bundle/tagbar && git status > /dev/null
@@ -132,6 +136,36 @@ if [ -d ~/.vim/bundle/tagbar ]; then
 else
   echo -n "installing..."
   cd ~/.vim/bundle && git clone https://github.com/majutsushi/tagbar.git > /dev/null
+  echo "done!"
+fi
+
+#Install vim-fugitive, or if it already exists pull down the latest
+echo -n "vim-fugitive..."
+if [ -d ~/.vim/bundle/vim-fugitive ]; then 
+  cd ~/.vim/bundle/vim-fugitive && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-fugitive && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive.git > /dev/null 
+  echo "done!"
+fi
+
+#Install syntastic
+echo -n "Syntastic..."
+if [ -d ~/.vim/bundle/syntastic ]; then 
+  cd ~/.vim/bundle/syntastic && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/syntastic && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic > /dev/null 
   echo "done!"
 fi
 

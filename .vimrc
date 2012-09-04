@@ -15,7 +15,8 @@
 "   Download:
 "     https://github.com/scrooloose/
 "   Install:
-"     cd ~/.vim/bundle
+"     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+"     cd ~/.vim/bundle \
 "     git clone https://github.com/scrooloose/nerdtree.git
 "
 " VimSurround:
@@ -25,6 +26,23 @@
 "     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 "     cd ~/.vim/bundle; \
 "     git clone git://github.com/tpope/vim-surround.git
+" 
+" VimFugitive:
+"   Download:
+"     https://github.com/tpope/vim-fugitive
+"   Install:
+"     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+"     cd ~/.vim/bundle; \
+"     git clone git://github.com/tpope/vim-fugitive.git
+"
+" Syntastic:
+"   Download:
+"     https://github.com/scrooloose/syntastic
+"   Install:
+"     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+"     cd ~/.vim/bundle; \
+"     git clone https://github.com/scrooloose/syntastic
+"
 " ----------------------------------------------------------------------------
 
 " Set the xterm type
