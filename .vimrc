@@ -106,3 +106,6 @@ set laststatus=2
 
 " Always set auto indenting on
 set autoindent
+
+" Set the gutter color for Git Gutter to clear
+highlight clear SignColumn
