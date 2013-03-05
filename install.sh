@@ -94,6 +94,8 @@ else
   echo "done!"
 fi
 
+#Should this install process be abstracted out? Yes! I am doing to do that? Maybe.
+
 #Install nerdtree, or if it already exists, pull down the latest
 echo -n "nerdtree..."
 if [ -d ~/.vim/bundle/nerdtree ]; then 
@@ -166,6 +168,21 @@ if [ -d ~/.vim/bundle/syntastic ]; then
 else
   echo -n "installing..."
   cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic > /dev/null 
+  echo "done!"
+fi
+
+#Install Git Gutter
+echo -n "Git Gutter..."
+if [ -d ~/.vim/bundle/vim-gitgutter ]; then 
+  cd ~/.vim/bundle/vim-gitgutter && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/gitgutter && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/airblade/vim-gitgutter.git > /dev/null 
   echo "done!"
 fi
 
