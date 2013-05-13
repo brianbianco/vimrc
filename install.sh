@@ -177,7 +177,7 @@ if [ -d ~/.vim/bundle/vim-gitgutter ]; then
   cd ~/.vim/bundle/vim-gitgutter && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
-    cd ~/.vim/bundle/gitgutter && git pull > /dev/null
+    cd ~/.vim/bundle/vim-gitgutter && git pull > /dev/null
     echo "done!"
   fi
 else
