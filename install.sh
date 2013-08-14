@@ -186,6 +186,21 @@ else
   echo "done!"
 fi
 
+#Install Trailer Trash
+echo -n "Trailer Trash..."
+if [ -d ~/.vim/bundle/trailertrash.vim ]; then 
+  cd ~/.vim/bundle/trailertrash.vim && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/trailertrash.vim && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/csexton/trailertrash.vim.git > /dev/null 
+  echo "done!"
+fi
+
 #Install .vimrc
 ################################################################################
 cd $START_DIR && cp -f .vimrc ~/
