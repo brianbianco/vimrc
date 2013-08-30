@@ -109,3 +109,6 @@ set autoindent
 
 " Set the gutter color for Git Gutter to clear
 highlight clear SignColumn
+
+" Fixes annoying white space pasting issues
+set paste
