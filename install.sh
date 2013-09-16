@@ -10,10 +10,10 @@
 # This script will download and install my vim plugins along with installing
 # my .vimrc into a users home directory.
 #
-# The tagbar plugin requires Exuberant ctags.  
+# The tagbar plugin requires Exuberant ctags.
 #
 # OSX: brew install ctags-exuberant
-# Ubuntu: apt-get install exuberant-ctags 
+# Ubuntu: apt-get install exuberant-ctags
 #
 # On OSX you may have to modify your path so that /usr/local/bin/ctags is used
 # instead of /usr/bin/ctags
@@ -47,8 +47,8 @@ do
   type $current_prereq 2>&1 1>/dev/null
   if [ $? -ne 0 ]; then
     if [ $current_prereq == "ctags" ]; then
-      echo "no, please install exuberant ctags!" 
-    else 
+      echo "no, please install exuberant ctags!"
+    else
       echo "no, please install $current_prereq"
     fi
     exit 1
@@ -94,11 +94,11 @@ else
   echo "done!"
 fi
 
-#Should this install process be abstracted out? Yes! I am doing to do that? Maybe.
+#Should this install process be abstracted out? Yes! I am going to do that? Maybe.
 
 #Install nerdtree, or if it already exists, pull down the latest
 echo -n "nerdtree..."
-if [ -d ~/.vim/bundle/nerdtree ]; then 
+if [ -d ~/.vim/bundle/nerdtree ]; then
   cd ~/.vim/bundle/nerdtree && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -113,7 +113,7 @@ fi
 
 #Install vim-surround, or if it already exists, pull down the latest
 echo -n "vim-surround..."
-if [ -d ~/.vim/bundle/vim-surround ]; then 
+if [ -d ~/.vim/bundle/vim-surround ]; then
   cd ~/.vim/bundle/vim-surround && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -143,7 +143,7 @@ fi
 
 #Install vim-fugitive, or if it already exists pull down the latest
 echo -n "vim-fugitive..."
-if [ -d ~/.vim/bundle/vim-fugitive ]; then 
+if [ -d ~/.vim/bundle/vim-fugitive ]; then
   cd ~/.vim/bundle/vim-fugitive && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -152,13 +152,13 @@ if [ -d ~/.vim/bundle/vim-fugitive ]; then
   fi
 else
   echo -n "installing..."
-  cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive.git > /dev/null 
+  cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive.git > /dev/null
   echo "done!"
 fi
 
 #Install syntastic
 echo -n "Syntastic..."
-if [ -d ~/.vim/bundle/syntastic ]; then 
+if [ -d ~/.vim/bundle/syntastic ]; then
   cd ~/.vim/bundle/syntastic && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -167,13 +167,13 @@ if [ -d ~/.vim/bundle/syntastic ]; then
   fi
 else
   echo -n "installing..."
-  cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic > /dev/null 
+  cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic > /dev/null
   echo "done!"
 fi
 
 #Install Git Gutter
 echo -n "Git Gutter..."
-if [ -d ~/.vim/bundle/vim-gitgutter ]; then 
+if [ -d ~/.vim/bundle/vim-gitgutter ]; then
   cd ~/.vim/bundle/vim-gitgutter && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -182,13 +182,13 @@ if [ -d ~/.vim/bundle/vim-gitgutter ]; then
   fi
 else
   echo -n "installing..."
-  cd ~/.vim/bundle && git clone https://github.com/airblade/vim-gitgutter.git > /dev/null 
+  cd ~/.vim/bundle && git clone https://github.com/airblade/vim-gitgutter.git > /dev/null
   echo "done!"
 fi
 
 #Install Trailer Trash
 echo -n "Trailer Trash..."
-if [ -d ~/.vim/bundle/trailertrash.vim ]; then 
+if [ -d ~/.vim/bundle/trailertrash.vim ]; then
   cd ~/.vim/bundle/trailertrash.vim && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
@@ -197,9 +197,25 @@ if [ -d ~/.vim/bundle/trailertrash.vim ]; then
   fi
 else
   echo -n "installing..."
-  cd ~/.vim/bundle && git clone https://github.com/csexton/trailertrash.vim.git > /dev/null 
+  cd ~/.vim/bundle && git clone https://github.com/csexton/trailertrash.vim.git > /dev/null
   echo "done!"
 fi
+
+#Install Vim Elixir
+echo -n "Vim Elixir..."
+if [ -d ~/.vim/bundle/vim-elixir ]; then
+  cd ~/.vim/bundle/vim-elixir && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-elixir && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/elixir-lang/vim-elixir.git > /dev/null
+  echo "done!"
+fi
+
 
 #Install .vimrc
 ################################################################################
