@@ -112,3 +112,8 @@ highlight clear SignColumn
 
 " Fixes annoying white space pasting issues
 set paste
+
+" Highlights columns past 80 so you know when you're being a jerk
+
+highlight ColorColumn ctermbg=234
+let &colorcolumn=join(range(81,999),",")
