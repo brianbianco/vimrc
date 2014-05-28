@@ -86,7 +86,7 @@ echo "Installing plugins..."
 
 #Install the latest version of pathogen
 echo -n "pathogen..."
-curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim > /dev/null
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim > /dev/null
 if [ $? -ne 0 ]; then
   echo "pathogen failed to install... aborting :("
   exit 1;
