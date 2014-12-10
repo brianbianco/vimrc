@@ -4,13 +4,13 @@
 " Plugins used:
 " ------------
 " Pathogen:
-"   Download: 
+"   Download:
 "     https://github.com/tpope/vim-pathogen
 "   Install:
 "     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 "     curl -so ~/.vim/autoload/pathogen.vim \
 "     https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" 
+"
 " NerdTree:
 "   Download:
 "     https://github.com/scrooloose/
@@ -26,7 +26,7 @@
 "     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 "     cd ~/.vim/bundle; \
 "     git clone git://github.com/tpope/vim-surround.git
-" 
+"
 " VimFugitive:
 "   Download:
 "     https://github.com/tpope/vim-fugitive
@@ -44,6 +44,9 @@
 "     git clone https://github.com/scrooloose/syntastic
 "
 " ----------------------------------------------------------------------------
+
+" Use VIM settings instead of VI settings.
+set nocompatible
 
 " Set the xterm type
 set t_Co=256
@@ -70,6 +73,7 @@ let NERDTreeShowHidden=1
 " Setup tabs as spaces, and limit to 2
 set expandtab
 set tabstop=2
+set shiftwidth=2
 
 " Enable line numbering
 set number
@@ -106,6 +110,9 @@ set laststatus=2
 
 " Always set auto indenting on
 set autoindent
+
+" Load the indent file based on file type
+filetype indent on
 
 " Set the gutter color for Git Gutter to clear
 highlight clear SignColumn

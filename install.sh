@@ -216,6 +216,21 @@ else
   echo "done!"
 fi
 
+#https://github.com/vim-ruby/vim-ruby
+#Install Vim Ruby
+echo -n "Vim Ruby..."
+if [ -d ~/.vim/bundle/vim-ruby ]; then
+  cd ~/.vim/bundle/vim-ruby && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-ruby && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/vim-ruby/vim-ruby > /dev/null
+  echo "done!"
+fi
 
 #Install .vimrc
 ################################################################################
