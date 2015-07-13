@@ -232,6 +232,22 @@ else
   echo "done!"
 fi
 
+#clone https://bitbucket.org/kien/ctrlp.vim
+#Install control p
+echo -n "Control P..."
+if [ -d ~/.vim/bundle/ctrlp.vim ]; then
+  cd ~/.vim/bundle/ctrlp.vim && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/ctrlp.vim && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/kien/ctrlp.vim > /dev/null
+  echo "done!"
+fi
+
 #Install .vimrc
 ################################################################################
 cd $START_DIR && cp -f .vimrc ~/

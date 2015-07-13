@@ -121,6 +121,12 @@ highlight clear SignColumn
 set paste
 
 " Highlights columns past 80 so you know when you're being a jerk
-
 highlight ColorColumn ctermbg=234
 let &colorcolumn=join(range(81,999),",")
+
+" Set backspace key to act like I expect it to
+set backspace=2
+
+" Control-P config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
