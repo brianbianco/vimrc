@@ -248,6 +248,22 @@ else
   echo "done!"
 fi
 
+#git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
+#Install airline
+echo -n "airline..."
+if [ -d ~/.vim/bundle/vim-airline ]; then
+  cd ~/.vim/bundle/vim-airline && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-airline && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/bling/vim-airline > /dev/null
+  echo "done!"
+fi
+
 #Install .vimrc
 ################################################################################
 cd $START_DIR && cp -f .vimrc ~/
