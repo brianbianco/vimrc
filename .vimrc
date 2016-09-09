@@ -130,3 +130,6 @@ set backspace=2
 " Control-P config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
+let g:syntastic_go_checkers = ['go']
