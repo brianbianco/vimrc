@@ -264,6 +264,22 @@ else
   echo "done!"
 fi
 
+#Install airline
+#git clone https://github.com/hashivim/vim-terraform.git
+echo -n "vim terraform..."
+if [ -d ~/.vim/bundle/vim-terraform ]; then
+  cd ~/.vim/bundle/vim-terraform && git status > /dev/null
+  if [ $? -eq 0 ]; then
+    echo -n "already installed, updating..."
+    cd ~/.vim/bundle/vim-terraform && git pull > /dev/null
+    echo "done!"
+  fi
+else
+  echo -n "installing..."
+  cd ~/.vim/bundle && git clone https://github.com/hashivim/vim-terraform.git > /dev/null
+  echo "done!"
+fi
+
 #Install .vimrc
 ################################################################################
 cd $START_DIR && cp -f .vimrc ~/
