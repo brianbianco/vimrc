@@ -133,3 +133,6 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
 let g:syntastic_go_checkers = ['go']
+
+" 4 space indent for python files
+au FileType python setl sw=4 sts=4 et
