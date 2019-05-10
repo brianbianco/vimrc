@@ -136,3 +136,6 @@ let g:syntastic_go_checkers = ['go']
 
 " 4 space indent for python files
 au FileType python setl sw=4 sts=4 et
+
+" Fixes weird tab formatting issue I had with golang files
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
