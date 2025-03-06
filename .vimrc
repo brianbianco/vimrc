@@ -35,14 +35,6 @@
 "     cd ~/.vim/bundle; \
 "     git clone git://github.com/tpope/vim-fugitive.git
 "
-" Syntastic:
-"   Download:
-"     https://github.com/scrooloose/syntastic
-"   Install:
-"     mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-"     cd ~/.vim/bundle; \
-"     git clone https://github.com/scrooloose/syntastic
-"
 " ----------------------------------------------------------------------------
 
 " Use VIM settings instead of VI settings.
@@ -132,7 +124,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Synastic doesn't check Go files on save by default (anymore), this restores that behaviour
-let g:syntastic_go_checkers = ['go']
+" let g:syntastic_go_checkers = ['go']
 
 " 4 space indent for python files
 au FileType python setl sw=4 sts=4 et

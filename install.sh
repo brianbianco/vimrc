@@ -156,18 +156,18 @@ else
   echo "done!"
 fi
 
-#Install syntastic
-echo -n "Syntastic..."
-if [ -d ~/.vim/bundle/syntastic ]; then
-  cd ~/.vim/bundle/syntastic && git status > /dev/null
+#Install ale
+echo -n "ale..."
+if [ -d ~/.vim/bundle/ale ]; then
+  cd ~/.vim/bundle/ale && git status > /dev/null
   if [ $? -eq 0 ]; then
     echo -n "already installed, updating..."
-    cd ~/.vim/bundle/syntastic && git pull > /dev/null
+    cd ~/.vim/bundle/ale && git pull > /dev/null
     echo "done!"
   fi
 else
   echo -n "installing..."
-  cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic > /dev/null
+  cd ~/.vim/bundle && git clone https://github.com/dense-analysis/ale > /dev/null
   echo "done!"
 fi
 
